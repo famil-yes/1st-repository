@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>즐거운 여행을 위한 꿀팁</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h1 class="logo"><a href="index.html">즐거운 여행</a></h1>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="about.html">즐거운여행사 소개</a></li>
+        <li><a href="tips.html">즐거운 여행을 위한 꿀팁</a></li>
+        <li><a href="english.html">여행을 위한 간단 영어</a></li>
+        <li><a href="faq.html">자주 묻는 질문</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section id="tips-intro">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i> 즐거운 여행을 위한 꿀팁</h2>
+      <p class="section-description">완벽한 여행을 위해 알아두면 좋은 팁을 모았습니다. 준비부터 여행 중까지 꼭 확인해보세요!</p>
+    </section>
+
+    <section id="preparation-tips">
+      <h2 class="section-title"><i class="fas fa-suitcase"></i> 여행 준비 꿀팁</h2>
+      <ul class="tips-list">
+        <li><i class="fas fa-check-circle"></i> 여행 목적지와 일정을 미리 계획하세요.</li>
+        <li><i class="fas fa-check-circle"></i> 중요한 서류(여권, 비자 등)는 복사본을 만들어 두세요.</li>
+        <li><i class="fas fa-check-circle"></i> 날씨를 확인하고 적절한 옷을 준비하세요.</li>
+        <li><i class="fas fa-check-circle"></i> 응급상황에 대비해 여행자 보험에 가입하세요.</li>
+      </ul>
+    </section>
+
+    <section id="travel-tips">
+      <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> 여행 중 꿀팁</h2>
+      <ul class="tips-list">
+        <li><i class="fas fa-check-circle"></i> 현지 문화와 예절을 존중하세요.</li>
+        <li><i class="fas fa-check-circle"></i> 소매치기에 대비해 귀중품은 몸 가까이에 보관하세요.</li>
+        <li><i class="fas fa-check-circle"></i> 현지 음식을 경험해보되, 위생에 주의하세요.</li>
+        <li><i class="fas fa-check-circle"></i> 항상 여유 있는 일정으로 여행을 즐기세요.</li>
+      </ul>
+    </section>
+
+    <section id="budget-tips">
+      <h2 class="section-title"><i class="fas fa-wallet"></i> 예산 절약 꿀팁</h2>
+      <ul class="tips-list">
+        <li><i class="fas fa-check-circle"></i> 항공권과 숙박은 할인 프로모션을 적극 활용하세요.</li>
+        <li><i class="fas fa-check-circle"></i> 관광지보다는 현지인이 추천하는 장소를 방문하세요.</li>
+        <li><i class="fas fa-check-circle"></i> 도시 대중교통을 활용해 교통비를 절약하세요.</li>
+        <li><i class="fas fa-check-circle"></i> 무료 입장 가능한 명소를 찾아보세요.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 즐거운 여행. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('menu');
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      if (!menu.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

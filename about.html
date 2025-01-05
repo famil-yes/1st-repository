@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>즐거운 여행</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h1 class="logo"><a href="index.html">즐거운 여행</a></h1>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="about.html">즐거운여행사 소개</a></li>
+        <li><a href="tips.html">즐거운 여행을 위한 꿀팁</a></li>
+        <li><a href="english.html">여행을 위한 간단 영어</a></li>
+        <li><a href="#section4">자주 묻는 질문</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section id="section1">
+      <h2 class="section-title"><i class="fas fa-plane"></i> Welcome to 즐거운 여행</h2>
+      <p class="section-description">즐거운 여행사는 당신의 꿈같은 여행을 현실로 만들어 드립니다. 전 세계 어디든, 언제든 당신의 특별한 순간을 책임지겠습니다.</p>
+    </section>
+  
+    <section id="about-us">
+      <h2 class="section-title"><i class="fas fa-users"></i> 우리는 누구인가요?</h2>
+      <p>즐거운 여행사는 다양한 경험과 열정을 가진 여행 전문가들이 함께하는 회사입니다. 고객 한 분 한 분의 요구를 철저히 분석하여 맞춤형 여행 서비스를 제공합니다.</p>
+      <ul class="info-list">
+        <li><i class="fas fa-calendar-alt"></i> 설립 연도: 2005년</li>
+        <li><i class="fas fa-map-marker-alt"></i> 본사 위치: 서울, 대한민국</li>
+        <li><i class="fas fa-user-friends"></i> 누적 고객: 10만 명 이상</li>
+      </ul>
+    </section>
+  
+    <section id="services">
+      <h2 class="section-title"><i class="fas fa-concierge-bell"></i> 우리의 서비스</h2>
+      <p>즐거운 여행사는 다음과 같은 서비스를 제공합니다:</p>
+      <ul class="services-list">
+        <li>맞춤형 여행 패키지</li>
+        <li>항공권 및 숙박 예약</li>
+        <li>현지 투어 및 액티비티 예약</li>
+        <li>여행 보험 및 컨설팅</li>
+      </ul>
+    </section>
+  
+    <section id="why-us">
+      <h2 class="section-title"><i class="fas fa-star"></i> 왜 즐거운 여행사를 선택해야 할까요?</h2>
+      <ul class="reasons-list">
+        <li><strong>신뢰성:</strong> 수년간의 경험을 바탕으로 최상의 품질을 보장합니다.</li>
+        <li><strong>맞춤형 서비스:</strong> 각 고객의 필요와 예산에 맞는 여행을 설계합니다.</li>
+        <li><strong>현지 전문성:</strong> 현지 네트워크와 협력하여 더 나은 혜택과 지원을 제공합니다.</li>
+      </ul>
+    </section>
+  
+    <section id="contact-us">
+      <h2 class="section-title"><i class="fas fa-envelope"></i> 문의하기</h2>
+      <p>저희와 함께 여행 계획을 세워보세요! 언제든 문의해 주세요.</p>
+      <ul class="contact-info">
+        <li><i class="fas fa-envelope"></i> 이메일: <a href="mailto:info@joytravel.com">info@joytravel.com</a></li>
+        <li><i class="fas fa-phone"></i> 전화: <a href="tel:+821012345678">+82-10-1234-5678</a></li>
+        <li><i class="fas fa-map-marker-alt"></i> 주소: 서울시 강남구 테헤란로 123, 10층</li>
+      </ul>
+      <p>저희 SNS를 팔로우해 최신 소식을 확인하세요:</p>
+      <ul class="sns-list">
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 즐거운 여행. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+      document.body.addEventListener('click', closeMenuOnClickOutside);
+    }
+
+    function closeMenuOnClickOutside(event) {
+      const menu = document.getElementById('menu');
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      if (!menu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+        menu.classList.remove('show');
+        document.body.removeEventListener('click', closeMenuOnClickOutside);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>즐거운 여행</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h1 class="logo"><a href="index.html">즐거운 여행</a></h1>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="about.html">즐거운여행사 소개</a></li>
+        <li><a href="tips.html">즐거운 여행을 위한 꿀팁</a></li>
+        <li><a href="english.html">여행을 위한 간단 영어</a></li>
+        <li><a href="faq.html">자주 묻는 질문</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section id="intro">
+      <h2 class="section-title"><i class="fas fa-globe"></i> 여행을 위한 간단 영어</h2>
+      <p class="section-description">해외여행 중 꼭 필요한 기본 영어 표현을 정리했습니다. 상황별로 간단한 문장을 외워보세요!</p>
+    </section>
+
+    <section id="airport">
+      <h2 class="section-title"><i class="fas fa-plane"></i> 공항에서</h2>
+      <ul class="english-list">
+        <li><strong>Where is the check-in counter?</strong> - 체크인 카운터가 어디인가요?</li>
+        <li><strong>Can I see your passport?</strong> - 여권을 보여주시겠어요?</li>
+        <li><strong>Where is the boarding gate?</strong> - 탑승 게이트가 어디인가요?</li>
+        <li><strong>How much is the extra baggage fee?</strong> - 초과 수하물 요금이 얼마인가요?</li>
+      </ul>
+    </section>
+
+    <section id="hotel">
+      <h2 class="section-title"><i class="fas fa-hotel"></i> 호텔에서</h2>
+      <ul class="english-list">
+        <li><strong>I have a reservation under [name].</strong> - [이름]으로 예약했습니다.</li>
+        <li><strong>What time is check-out?</strong> - 체크아웃 시간은 언제인가요?</li>
+        <li><strong>Can I get an extra blanket?</strong> - 추가 담요를 받을 수 있을까요?</li>
+        <li><strong>Is breakfast included?</strong> - 조식이 포함되어 있나요?</li>
+      </ul>
+    </section>
+
+    <section id="restaurant">
+      <h2 class="section-title"><i class="fas fa-utensils"></i> 식당에서</h2>
+      <ul class="english-list">
+        <li><strong>Can I see the menu?</strong> - 메뉴를 볼 수 있을까요?</li>
+        <li><strong>What is today’s special?</strong> - 오늘의 특선 요리는 무엇인가요?</li>
+        <li><strong>Can I get this to-go?</strong> - 이것을 포장해 주실 수 있나요?</li>
+        <li><strong>Can I have the bill, please?</strong> - 계산서를 주시겠어요?</li>
+      </ul>
+    </section>
+
+    <section id="directions">
+      <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> 길을 물을 때</h2>
+      <ul class="english-list">
+        <li><strong>How do I get to [place]?</strong> - [장소]에 어떻게 가나요?</li>
+        <li><strong>Is there a bus stop nearby?</strong> - 근처에 버스 정류장이 있나요?</li>
+        <li><strong>How far is it from here?</strong> - 여기에서 얼마나 멀리 있나요?</li>
+        <li><strong>Can you show me on the map?</strong> - 지도로 보여주시겠어요?</li>
+      </ul>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <p>&copy; 2025 즐거운 여행. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+      document.body.addEventListener('click', closeMenuOnClickOutside);
+    }
+
+    function closeMenuOnClickOutside(event) {
+      const menu = document.getElementById('menu');
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      if (!menu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+        menu.classList.remove('show');
+        document.body.removeEventListener('click', closeMenuOnClickOutside);
+      }
+    }
+  </script>
+</body>
+</html>

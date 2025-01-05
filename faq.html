@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자주 묻는 질문</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h1 class="logo"><a href="index.html">즐거운 여행</a></h1>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="about.html">즐거운여행사 소개</a></li>
+        <li><a href="tips.html">즐거운 여행을 위한 꿀팁</a></li>
+        <li><a href="english.html">여행을 위한 간단 영어</a></li>
+        <li><a href="faq.html">자주 묻는 질문</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section id="faq">
+      <h2 class="section-title"><i class="fas fa-question-circle"></i> 자주 묻는 질문</h2>
+      <p class="section-description">여행 준비와 관련해 자주 묻는 질문들을 정리했습니다. 원하는 질문을 클릭해 답변을 확인하세요!</p>
+      
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <i class="fas fa-chevron-right"></i> 여행자 보험은 꼭 가입해야 하나요?
+          </button>
+          <div class="accordion-content">
+            <p>여행자 보험은 예상치 못한 사고나 질병에 대비하기 위해 꼭 가입하는 것이 좋습니다. 특히 해외여행 시 필수입니다.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <i class="fas fa-chevron-right"></i> 여권 유효기간은 얼마나 남아야 하나요?
+          </button>
+          <div class="accordion-content">
+            <p>대부분의 국가에서는 여권 유효기간이 최소 6개월 이상 남아 있어야 입국이 가능합니다. 출발 전에 반드시 확인하세요.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <i class="fas fa-chevron-right"></i> 항공권은 언제 구매하는 것이 저렴한가요?
+          </button>
+          <div class="accordion-content">
+            <p>항공권은 출발일로부터 약 2~3개월 전에 예약하는 것이 저렴할 가능성이 높습니다. 또한, 화요일과 수요일은 할인 항공권이 많이 나오는 날입니다.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <i class="fas fa-chevron-right"></i> 해외에서 사용할 수 있는 신용카드는 무엇인가요?
+          </button>
+          <div class="accordion-content">
+            <p>비자(VISA)나 마스터카드(MasterCard) 등 국제 결제가 가능한 신용카드를 사용하는 것이 좋습니다. 사용 전 카드사의 해외 사용 가능 여부를 확인하세요.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-button">
+            <i class="fas fa-chevron-right"></i> 기내 수하물로 반입할 수 없는 물품은 무엇인가요?
+          </button>
+          <div class="accordion-content">
+            <p>액체류(100ml 초과), 날카로운 물건, 인화성 물질 등은 기내 수하물로 반입할 수 없습니다. 각 항공사의 규정을 확인하세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 즐거운 여행. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('menu');
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      if (!menu.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+
+    // FAQ 아코디언 기능
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        button.classList.toggle('active');
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+        const icon = button.querySelector('i');
+        icon.classList.toggle('fa-chevron-right');
+        icon.classList.toggle('fa-chevron-down');
+      });
+    });
+  </script>
+</body>
+</html>
